@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LettersMatrix {
-    public String[] words = {"ana", "alka", "olka", "lena"};
+    public String[] words = {"ana", "anka", "olka", "alka"};
 
     public List<Character> letters;
 
@@ -17,6 +17,18 @@ public class LettersMatrix {
         }
 
         letterCounters = new int[words.length][letters.size()];
+
+        for (int i = 0; i < letterCounters.length; i++){
+            for (int j = 0; j < letterCounters[i].length; j++){
+                letterCounters[i][j] = 0;
+            }
+        }
+
+        for (int i = 0; i < words.length; i++){
+            for (int j = 0; j < words[i].length(); j++){
+                letterCounters[i][letters.indexOf(words[i].charAt(j))]++;
+            }
+        }
 
     }
 };
