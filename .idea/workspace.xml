@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb8ce363-5e97-4af0-b265-503fd066dce9" name="Changes" comment="Finished LettersMatrix clas for first test and added SimilarityMatrix class">
+    <list default="true" id="fb8ce363-5e97-4af0-b265-503fd066dce9" name="Changes" comment="Added fillSimilarity, calculateSimilarity functions, aswell as printing functions in both classes and fixed some errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LettersMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LettersMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -81,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667832247870</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished LettersMatrix class for first test and added SimilarityMatrix class">
+      <created>1667846837194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667846837194</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +106,8 @@
     <MESSAGE value="Scratch for phylogenetic word tree" />
     <MESSAGE value="Some changes to constructor" />
     <MESSAGE value="Finished LettersMatrix clas for first test and added SimilarityMatrix class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished LettersMatrix clas for first test and added SimilarityMatrix class" />
+    <MESSAGE value="Finished LettersMatrix class for first test and added SimilarityMatrix class" />
+    <MESSAGE value="Added fillSimilarity, calculateSimilarity functions, aswell as printing functions in both classes and fixed some errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fillSimilarity, calculateSimilarity functions, aswell as printing functions in both classes and fixed some errors" />
   </component>
 </project>
