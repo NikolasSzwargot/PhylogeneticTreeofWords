@@ -1,6 +1,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        SimilarityMatrix test = new SimilarityMatrix();
+
+        test.letters.printMatrix();
+        test.fillSimilarity();
+        test.printSimilarity();
     }
 }
