@@ -44,4 +44,9 @@ public class LettersMatrix {
             System.out.print("\n");
         }
     }
+
+   // public void connectWords(int first, int second){
+      //  words[first] = "( " + words[first] +  " , " + words[second] + " )";
+       // words[second] = words[first];
+   // }
 }
