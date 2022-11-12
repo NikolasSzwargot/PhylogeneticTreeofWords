@@ -9,7 +9,7 @@ public class SimilarityMatrix {
     public int minimumRowIndex;
     public int minimumColumnIndex;
 
-    boolean[] activevalues;
+    boolean[] activeValues;
 
     public SimilarityMatrix(){
         letters = new LettersMatrix();
@@ -17,8 +17,8 @@ public class SimilarityMatrix {
         similarityValues = new float[letters.words.length][];
 
         Arrays.setAll(similarityValues, i -> new float[similarityValues.length]);
-        activevalues = new boolean[similarityValues.length];
-        Arrays.fill(activevalues, true);
+        activeValues = new boolean[similarityValues.length];
+        Arrays.fill(activeValues, true);
     }
 
     public int calculateSimilarity(int mainWordIndex, int hypoSimilarIndex){
@@ -41,9 +41,9 @@ public class SimilarityMatrix {
     }
 
     public void printSimilarity(){
-        System.out.print("Macierz podobienstwa:\n");
+        System.out.print("Similarity matrix:\n");
         for (int i = 0; i < similarityValues.length; i++){
-            if (activevalues[i]) {
+            if (activeValues[i]) {
                 System.out.print(letters.words[i] + " ");
                 for (int j = 0; j < similarityValues[i].length; j++) {
                     System.out.print(similarityValues[i][j] + " ");
@@ -60,7 +60,7 @@ public class SimilarityMatrix {
 
         for (int i = 0; i < similarityValues.length; i++){
             for (int j = 1; j < similarityValues[i].length; j++){
-                if (activevalues[i]) {
+                if (activeValues[i]) {
                     if (temp != 0 && similarityValues[i][j] != 0) {
                         if (temp > similarityValues[i][j]) {
                             temp = similarityValues[i][j];
@@ -82,7 +82,7 @@ public class SimilarityMatrix {
         //letters.connectWords(minimumRowIndex, minimumColumnIndex);
 
         for (int i = 0; i < similarityValues[minimumRowIndex].length; i++){
-            if (activevalues[i]) {
+            if (activeValues[i]) {
                 if (similarityValues[minimumRowIndex][i] != 0 && similarityValues[minimumColumnIndex][i] != 0) {
                     similarityValues[minimumRowIndex][i] = (similarityValues[minimumRowIndex][i] + similarityValues[minimumColumnIndex][i]) / 2;
                     similarityValues[minimumColumnIndex][i] = similarityValues[minimumRowIndex][i];
@@ -94,9 +94,9 @@ public class SimilarityMatrix {
                 }
             }
         }
-        activevalues[minimumColumnIndex] = false;
+        activeValues[minimumColumnIndex] = false;
         for (int i = 0; i < similarityValues.length; i++){
-            if (activevalues[i])
+            if (activeValues[i])
                 similarityValues[i][minimumColumnIndex] = 0;
         }
     }
