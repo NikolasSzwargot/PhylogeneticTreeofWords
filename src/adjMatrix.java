@@ -79,19 +79,19 @@ public class adjMatrix {
         int firstConn, secondConn;
         do{
             similarity.findMinimumSimilarity();
-            if (!labels.contains(similarity.letters.words[similarity.minimumRowIndex])) {
-                addVertex(similarity.letters.words[similarity.minimumRowIndex], -1, -1, 0);
+            if (!labels.contains(similarity.letters.words.get(similarity.minimumRowIndex))) {
+                addVertex(similarity.letters.words.get(similarity.minimumRowIndex), -1, -1, 0);
                 firstConn = adjacency.size() - 1;
             }
             else {
-                firstConn = labels.indexOf(similarity.letters.words[similarity.minimumRowIndex]);
+                firstConn = labels.indexOf(similarity.letters.words.get(similarity.minimumRowIndex));
             }
-            if (!labels.contains(similarity.letters.words[similarity.minimumColumnIndex])) {
-                addVertex(similarity.letters.words[similarity.minimumColumnIndex], -1, -1, 0);
+            if (!labels.contains(similarity.letters.words.get(similarity.minimumColumnIndex))) {
+                addVertex(similarity.letters.words.get(similarity.minimumColumnIndex), -1, -1, 0);
                 secondConn = adjacency.size() - 1;
             }
             else {
-                secondConn = labels.indexOf(similarity.letters.words[similarity.minimumColumnIndex]);
+                secondConn = labels.indexOf(similarity.letters.words.get(similarity.minimumColumnIndex));
             }
             if (similarity.minimumRowIndex != 0 || similarity.minimumColumnIndex != 0)
                 addVertex("NODE_" + (++nodeCounter), firstConn, secondConn, similarity.similarityValues[similarity.minimumRowIndex][similarity.minimumColumnIndex]);

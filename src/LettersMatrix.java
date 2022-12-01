@@ -1,14 +1,29 @@
 import java.util.*;
 
 public class LettersMatrix {
-    public String[] words = {"ana", "anka", "olka", "alka"};
+    public ArrayList<String> words = new ArrayList<>();
 
     public Vector<Character> letters;
 
     public int[][] letterCounters;
 
-    public LettersMatrix(){
+    public void generateRandomWords(int numOfWords){
+        Random rand = new Random();
+        for (int i = 0; i < numOfWords; i++){
+            char[] temp = new char[rand.nextInt(3) + 3];
+            do {
+                for (int j = 0; j < temp.length; j++){
+                    temp[j] = (char)('a' + rand.nextInt(26));
+                }
+            }while (words.contains(new String(temp)));
+
+            words.add(new String(temp));
+        }
+    }
+
+    public void fillLetters(){
         letters = new Vector<>();
+
         for (String word : words) {
             for (int j = 0; j < word.length(); j++) {
                 if (!letters.contains(word.charAt(j))) {
@@ -17,27 +32,37 @@ public class LettersMatrix {
             }
         }
 
-        letterCounters = new int[words.length][letters.size()];
+        letterCounters = new int[words.size()][letters.size()];
 
         for (int[] letterCounter : letterCounters) {
             Arrays.fill(letterCounter, 0);
         }
 
-        for (int i = 0; i < words.length; i++){
-            for (int j = 0; j < words[i].length(); j++){
-                letterCounters[i][letters.indexOf(words[i].charAt(j))]++;
+        for (int i = 0; i < words.size(); i++){
+            for (int j = 0; j < words.get(i).length(); j++){
+                letterCounters[i][letters.indexOf(words.get(i).charAt(j))]++;
             }
         }
+    }
+
+    public LettersMatrix(int size){
+        generateRandomWords(size);
+        fillLetters();
 
     }
+
+    public LettersMatrix(String data){
+        words = new ArrayList<>(Arrays.asList(data.split(" ")));
+        fillLetters();
+    }
     public void printMatrix(){
-        System.out.print("Macierz liter:\n  ");
+        System.out.print("Letters matrix:\n  ");
         for (Character letter : letters) {
             System.out.print(letter + " ");
         }
         System.out.print("\n");
         for (int i = 0; i < letterCounters.length; i++){
-            System.out.print(words[i] + " ");
+            System.out.print(words.get(i) + " ");
             for (int j = 0; j < letterCounters[i].length; j++){
                 System.out.print(letterCounters[i][j] + " ");
             }

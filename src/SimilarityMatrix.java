@@ -11,12 +11,33 @@ public class SimilarityMatrix {
 
     boolean[] activeValues;
 
-    public SimilarityMatrix(){
-        letters = new LettersMatrix();
+    public SimilarityMatrix(int size){
+        letters = new LettersMatrix(size);
 
-        similarityValues = new float[letters.words.length][];
+        similarityValues = new float[letters.words.size()][];
 
         Arrays.setAll(similarityValues, i -> new float[similarityValues.length]);
+        activeValues = new boolean[similarityValues.length];
+        Arrays.fill(activeValues, true);
+    }
+
+    public SimilarityMatrix(String data){
+        letters = new LettersMatrix(data);
+
+        similarityValues = new float[letters.words.size()][];
+
+        Arrays.setAll(similarityValues, i -> new float[similarityValues.length]);
+        activeValues = new boolean[similarityValues.length];
+        Arrays.fill(activeValues, true);
+    }
+
+    public SimilarityMatrix(float[][] temp, String data){
+        letters = new LettersMatrix(data);
+        similarityValues = new float[temp.length][temp.length];
+        for (int k = 0; k < similarityValues.length; k++) {
+            System.arraycopy(temp[k], 0, similarityValues[k], 0, similarityValues.length);
+        }
+
         activeValues = new boolean[similarityValues.length];
         Arrays.fill(activeValues, true);
     }
@@ -44,7 +65,7 @@ public class SimilarityMatrix {
         System.out.print("Similarity matrix:\n");
         for (int i = 0; i < similarityValues.length; i++){
             if (activeValues[i]) {
-                System.out.print(letters.words[i] + " ");
+                System.out.print(letters.words.get(i) + " ");
                 for (int j = 0; j < similarityValues[i].length; j++) {
                     System.out.print(similarityValues[i][j] + " ");
                 }
