@@ -3,8 +3,8 @@ public class Upcm {
     SimilarityMatrix sim;
     adjMatrix adjaceny;
 
-    public Upcm(int size){
-        sim = new SimilarityMatrix(size);
+    public Upcm(int size, int length){
+        sim = new SimilarityMatrix(size, length);
         sim.fillSimilarity();
         adjaceny = new adjMatrix(sim);
     }

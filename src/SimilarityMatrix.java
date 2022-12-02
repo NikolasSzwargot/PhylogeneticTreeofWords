@@ -11,8 +11,8 @@ public class SimilarityMatrix {
 
     boolean[] activeValues;
 
-    public SimilarityMatrix(int size){
-        letters = new LettersMatrix(size);
+    public SimilarityMatrix(int size, int length){
+        letters = new LettersMatrix(size, length);
 
         similarityValues = new float[letters.words.size()][];
 

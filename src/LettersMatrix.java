@@ -7,10 +7,10 @@ public class LettersMatrix {
 
     public int[][] letterCounters;
 
-    public void generateRandomWords(int numOfWords){
+    public void generateRandomWords(int numOfWords, int size){
         Random rand = new Random();
         for (int i = 0; i < numOfWords; i++){
-            char[] temp = new char[rand.nextInt(3) + 3];
+            char[] temp = new char[rand.nextInt(size - 3) + 3];
             do {
                 for (int j = 0; j < temp.length; j++){
                     temp[j] = (char)('a' + rand.nextInt(26));
@@ -45,8 +45,8 @@ public class LettersMatrix {
         }
     }
 
-    public LettersMatrix(int size){
-        generateRandomWords(size);
+    public LettersMatrix(int size, int length){
+        generateRandomWords(size, length);
         fillLetters();
 
     }

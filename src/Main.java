@@ -20,7 +20,9 @@ public class Main {
                 case 1 -> {
                     System.out.print("Podaj ile slow losowych chcesz wygenerowac: ");
                     int numOfWords = input.nextInt();
-                    Upcm tree = new Upcm(numOfWords);
+                    System.out.print("Podaj maksymalna dlugosc slowa wygenerowanego: ");
+                    int leng = input.nextInt();
+                    Upcm tree = new Upcm(numOfWords, leng);
                 }
                 case 2 -> {
                     System.out.println("Podaj slowa oddzielone spacja: ");

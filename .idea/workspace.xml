@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb8ce363-5e97-4af0-b265-503fd066dce9" name="Changes" comment="Added UPGMA clustering implementation on adjacency matrix of graph">
-      <change afterPath="$PROJECT_DIR$/src/Upcm.java" afterDir="false" />
+    <list default="true" id="fb8ce363-5e97-4af0-b265-503fd066dce9" name="Changes" comment="Added console UI and a possibility to create a graph from a custom input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LettersMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LettersMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimilarityMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimilarityMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adjMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adjMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Upcm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Upcm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668257784521</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added console UI and a possibility to create a graph from a custom input">
+      <created>1669926487688</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669926487688</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +150,7 @@
     <MESSAGE value="Added fillSimilarity, calculateSimilarity functions, aswell as printing functions in both classes and fixed some errors" />
     <MESSAGE value="Fixed some bugs in previously created classes and added algorithm of calculating connections between words" />
     <MESSAGE value="Added UPGMA clustering implementation on adjacency matrix of graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UPGMA clustering implementation on adjacency matrix of graph" />
+    <MESSAGE value="Added console UI and a possibility to create a graph from a custom input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added console UI and a possibility to create a graph from a custom input" />
   </component>
 </project>
