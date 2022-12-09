@@ -73,6 +73,34 @@ public class adjMatrix {
         }
     }
 
+    public void createGraphvizNodes(int index){
+        int count = 0;
+        for (int i = (index - 1); i >= 0; i--)
+        {
+            if(adjacency.get(index).get(i) != 0){
+                count++;
+                System.out.println(labels.get(index) + " -> " + labels.get(i));
+                createGraphvizNodes(i);
+
+                if (count == 2){
+                    break;
+                }
+            }
+        }
+    }
+
+    public void toGraphvizFormat(){
+        System.out.println("digraph tree {");
+        for (String label : labels){
+            System.out.println(label + ";");
+        }
+        System.out.println();
+        createGraphvizNodes(labels.indexOf(labels.lastElement()));
+
+        System.out.print("}");
+
+    }
+
     public adjMatrix(SimilarityMatrix similarity){
         adjacency = new ArrayList<>();
         labels = new Vector<>();
@@ -94,7 +122,7 @@ public class adjMatrix {
                 secondConn = labels.indexOf(similarity.letters.words.get(similarity.minimumColumnIndex));
             }
             if (similarity.minimumRowIndex != 0 || similarity.minimumColumnIndex != 0)
-                addVertex("NODE_" + (++nodeCounter), firstConn, secondConn, similarity.similarityValues[similarity.minimumRowIndex][similarity.minimumColumnIndex]);
+                addVertex("ANCESTOR_" + (++nodeCounter), firstConn, secondConn, similarity.similarityValues[similarity.minimumRowIndex][similarity.minimumColumnIndex]);
 
             similarity.updateMinimumNode();
             //System.out.println("Minimum: " + similarity.minimumRowIndex + " " + similarity.minimumColumnIndex);
@@ -102,7 +130,7 @@ public class adjMatrix {
         } while (similarity.minimumRowIndex != 0 || similarity.minimumColumnIndex != 0);
         labels.remove(labels.lastElement());
         labels.add("ROOT");
-        printLabels();
-        printAdjMatrix();
+
+        toGraphvizFormat();
     }
 }
